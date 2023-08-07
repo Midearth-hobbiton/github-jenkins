@@ -2,6 +2,13 @@ pipeline {
     agent any 
     stages {
         stage('build') {
+            environment {
+                SHORT_SECRET = credentials("SHORT_SECRET")
+                LONG_SECRET = credentials("LONG_SECRET")
+                DOUBLE_SECRET = credentials("DOUBLE_SECRET")
+                SUPER_LONG_SECRET = credentials("SUPER_LONG_SECRET")
+                SECRET_TEXT = credentials("SECRET_TEXT")
+            }
             steps {
                 echo "Hello world"
                 echo 'Run the static analysis to the code' 
