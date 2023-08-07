@@ -10,7 +10,7 @@ pipeline {
                 SECRET_TEXT = credentials("SECRET_TEXT")
             }
             steps {
-                ls -al /var/lib/jenkins/workspace
+                sh 'ls -al /var/lib/jenkins/workspace'
                 echo "Hello world"
                 echo 'Run the static analysis to the code' 
                 echo "Hello123456789world"
